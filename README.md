@@ -1,4 +1,4 @@
-# UK Flower Classification with Deep Learning 🌸
+# UK Flower Classification with Deep Learning 🪷
 
 This repository hosts my final project for the AI Programming with Python Nanodegree program by Udacity, earned through a scholarship from AWS.
 
