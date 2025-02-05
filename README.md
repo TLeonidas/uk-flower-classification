@@ -13,8 +13,8 @@ This project trains a **deep learning model** to classify images of **102 flower
 
 ---
 
-## 📂 File Structure
-uk-flower-classification/
+## 📂 Repository Structure
+
 - train.py            # Train the model & save checkpoint
 - predict.py          # Load model & classify an image
 - model.py            # Model architecture & checkpoint functions
