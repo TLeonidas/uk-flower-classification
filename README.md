@@ -33,13 +33,16 @@ git clone https://github.com/TLeonidas/uk-flower-classification.git
 cd uk-flower-classification
 ```
 2️⃣ **Install dependencies**
+```bash
 pip install -r requirements.txt
-
+```
 ## Training the Model
+```bash
 python train.py flowers --epochs 7 --gpu
-
+```
 ## Predicting an Image
+```bash
 python predict.py flowers/test/100/image_07939.jpg checkpoint.pth --gpu
-
+```
 ## License
 This project is open-source under the MIT License.
