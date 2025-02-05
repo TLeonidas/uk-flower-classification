@@ -3,7 +3,7 @@
 This repository hosts my final project for the AI Programming with Python Nanodegree program by Udacity, earned through a scholarship from AWS.
 
 ## Project Overview
-The project trains a deep learning model to classify images of 102 flower species using transfer learning with a VGG16 or ResNet50 convolutional neural network.
+The project trains a deep learning model to classify images of 102 flower species in [this dataset](https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html) using transfer learning with a VGG16 or ResNet50 convolutional neural network.
 
 ## Features
 ✔ Transfer learning using VGG16 and ResNet50  
