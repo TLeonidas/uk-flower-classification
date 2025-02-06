@@ -5,7 +5,7 @@ def build_model(arch="vgg16", hidden_units=512):
     """Build a pre-trained model (VGG16 or ResNet50) with a custom classifier."""
     
     if arch == "vgg16":
-        model = models.vgg16(pretrained=True)
+        model = models.vgg16(weights=models.VGG16_Weights.DEFAULT)
         input_size = 25088  # VGG16's classifier input size
         model.classifier = nn.Sequential(
             nn.Linear(input_size, hidden_units),
