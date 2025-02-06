@@ -50,7 +50,8 @@ def save_checkpoint(model, optimizer, epochs, filepath):
 def load_checkpoint(filepath):
     """Load a model checkpoint and map it to the appropriate device."""
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    checkpoint = torch.load(filepath, map_location=device)
+
+    checkpoint = torch.load(filepath, map_location=device, weights_only=False)
 
     model = models.vgg16(pretrained=True)
     model.classifier = checkpoint["classifier"]
