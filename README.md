@@ -2,22 +2,23 @@
 
 This repository hosts a trained deep learning model for classifying 102 species of UK endemic flowers using transfer learning with a VGG16-based neural network. The model achieves 85% validation accuracy.
 
-#### **Dataset:** [Oxford 102 Flower Dataset](https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html)  
-#### **Trained Model:** Available in this repository soon (`checkpoint.pth`)  
-#### **Inference:** Clone this repository and run inference instantly!  
+#### Dataset: [Oxford 102 Flower Dataset](https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html)  
+#### Trained Model: Available in this repository (`checkpoint.pth`)  
+#### Inference: Clone this repository and run inference instantly!  
 ---
 
 ### 📂 Repository Structure
-
-- train.py            # Train the model & save checkpoint (Not necessary for inference)
-- predict.py          # Load model & classify an image
-- model.py            # Model architecture & checkpoint functions
-- utils.py            # Data loading & preprocessing
-- cat_to_name.json    # Category name mapping
+- .gitattributes      # Used to track *checkpoint.pth*
+- LICENSE             # MIT License
+- README.md           # Documentation
+- cat_to_name.json    # Category name mapping 
 - checkpoint.pth      # Saved model checkpoint
+- model.py            # Model architecture & checkpoint functions
+- predict.py          # Load model & classify an image
 - requirements.txt    # Dependencies
 - setup.sh            # Automates setup & inference
-- README.md           # Documentation
+- train.py            # Train the model & save checkpoint (Not necessary for inference)
+- utils.py            # Data loading & preprocessing
 ---
 
 ## **Installation & Setup**
