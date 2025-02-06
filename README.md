@@ -1,14 +1,13 @@
 # UK Flower Classification with Deep Learning 🌺
 
-This repository hosts a trained deep learning model for classifying 102 species of UK endemic flowers using transfer learning with a VGG16-based neural network. The model achieves 85% validation accuracy.
+This repository hosts a trained deep learning model for classifying 102 species of UK endemic flowers by building a custom classifier on top of a VGG16-based neural network. The model achieves 85% validation accuracy.
 
-#### Dataset: [Oxford 102 Flower Dataset](https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html)  
-#### Trained Model: Available in this repository (`checkpoint.pth`)  
-#### Inference: Clone this repository and run inference instantly!  
----
+**Dataset:** [Oxford 102 Flower Dataset](https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html)
+
+**Trained Model:** Available in this repository (`checkpoint.pth`)
 
 ### 📂 Repository Structure
-- .gitattributes      # Used to track *checkpoint.pth*
+- .gitattributes      # Used to track *checkpoint.pth* and linguistic documentation
 - LICENSE             # MIT License
 - README.md           # Documentation
 - cat_to_name.json    # Category name mapping 
@@ -22,14 +21,15 @@ This repository hosts a trained deep learning model for classifying 102 species 
 ---
 
 ## **Installation & Setup**
-To get started, simply run the following code after cloning the repository and changing the directory to it:
+To get started, simply download the *setup.sh* file, change the working directory to where the file was downloaded, and run the following code:
 ```bash
+cd <path_to_the_downloaded_file>
 bash setup.sh
 ```
 ## Running Inference
-**After running setup.sh, classify a flower image:**  
+**After running setup.sh, classify a flower image:**
 ```bash
-python predict.py your_img_path/image.jpg --gpu
+python predict.py <your_img_path/image.jpg> --gpu
 ```
 ## License
 This project is open-source under the MIT License.
