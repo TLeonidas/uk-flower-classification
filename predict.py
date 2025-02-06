@@ -47,6 +47,6 @@ if __name__ == "__main__":
     args = parser.parse_args()
     probs, classes = predict(args.image_path, "checkpoint.pth", args.top_k, args.category_names, args.gpu)
     
-    print("\n🌸 **Predictions:**")
+    print("\n **Predictions:**")
     for i, (prob, flower) in enumerate(zip(probs, classes), 1):
         print(f"{i}. {flower}: {prob*100:.2f}%")
