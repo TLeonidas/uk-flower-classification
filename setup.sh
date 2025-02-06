@@ -2,7 +2,7 @@
 
 # Step 1: Install Dependencies
 echo "📦 Installing dependencies..."
-pip install torch torchvision numpy matplotlib pillow argparse
+pip install torch==2.5.0 torchvision==0.16.0 numpy matplotlib pillow argparse
 
 # Step 2: Clone the Repository
 echo "📂 Cloning repository..."
@@ -19,7 +19,15 @@ fi
 echo "🖼️ Please enter the full path to the image for inference:"
 read image_path
 
-# Step 5: Run Inference on User's Image
+# Step 5: Check if Image Exists
+if [ ! -f "$image_path" ]; then
+    echo "❌ Error: The file '$image_path' does not exist."
+    exit 1
+fi
+
+# Step 6: Run Inference on User's Image
 python predict.py "$image_path" --gpu
 
-echo "✅ Setup Complete! Inference has been run on: $image_path"
+# Step 7: Keep Terminal Open After Execution
+echo "✅ Inference complete! Press Enter to exit."
+read  # <--- This keeps the window open until the user presses Enter.
