@@ -1,4 +1,4 @@
-# UK Flower Classification with Deep Learning 🪷
+# UK Flower Classification with Deep Learning 🌺
 
 This repository hosts a trained deep learning model for classifying 102 species of UK endemic flowers using transfer learning with a VGG16-based neural network. The model achieves 85% validation accuracy.
 
@@ -22,7 +22,7 @@ This repository hosts a trained deep learning model for classifying 102 species 
 ---
 
 ## **Installation & Setup**
-To get started, simply run:
+To get started, simply run the following code after cloning the repository and changing the directory to it:
 ```bash
 bash setup.sh
 ```
