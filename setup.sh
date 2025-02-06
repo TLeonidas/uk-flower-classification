@@ -15,8 +15,11 @@ if [ ! -f "checkpoint.pth" ]; then
     git lfs pull
 fi
 
-# Step 4: Run Inference on a Sample Image
-echo "🖼️ Running inference on sample image..."
-python predict.py flowers/test/1/image_06743.jpg --gpu
+# Step 4: Ask User for Image Path
+echo "🖼️ Please enter the full path to the image for inference:"
+read image_path
 
-echo "✅ Setup Complete! You can now use the model for inference."
+# Step 5: Run Inference on User's Image
+python predict.py "$image_path" --gpu
+
+echo "✅ Setup Complete! Inference has been run on: $image_path"
