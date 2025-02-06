@@ -1,6 +1,7 @@
 import torch
-from torch import nn
 from torchvision import models
+from torch.serialization import add_safe_globals
+from torch.nn import Sequential
 
 def build_model(arch="vgg16", hidden_units=512):
     """Build a pre-trained model (VGG16 or ResNet50) with a custom classifier."""
@@ -51,7 +52,8 @@ def load_checkpoint(filepath):
     """Load a model checkpoint and map it to the appropriate device."""
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-    checkpoint = torch.load(filepath, map_location=device, weights_only=False)
+    with add_safe_globals([Sequential]):
+        checkpoint = torch.load(filepath, map_location=device, weights_only=False)
 
     model = models.vgg16(pretrained=True)
     model.classifier = checkpoint["classifier"]
