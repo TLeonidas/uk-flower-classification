@@ -2,6 +2,7 @@
 
 # Step 1: Install Dependencies
 echo "📦 Installing dependencies..."
+pip install --upgrade pip  # Ensure pip is up to date
 pip install -r requirements.txt
 
 # Step 2: Clone the Repository
