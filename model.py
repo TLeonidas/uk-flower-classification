@@ -47,9 +47,11 @@ def save_checkpoint(model, optimizer, epochs, filepath):
     torch.save(checkpoint, filepath)
 
 def load_checkpoint(filepath):
-    """Load a model checkpoint and map it to the appropriate device."""
+    """Load a model checkpoint and ensure compatibility with PyTorch 2.6+."""
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    checkpoint = torch.load(filepath, map_location=device)  # 🔥 Fix applied here
+
+    # Fix: Ensure `weights_only=False` to load full checkpoint in PyTorch 2.6+
+    checkpoint = torch.load(filepath, map_location=device, weights_only=False)
 
     model = models.vgg16(pretrained=True)
     model.classifier = checkpoint["classifier"]
