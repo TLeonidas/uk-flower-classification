@@ -25,15 +25,14 @@ This project was developed as the final project for the AI Programming with Pyth
 ---
 
 ## **Installation & Setup**
-To get started, simply download the `setup.sh` file, navigate to its location, and run:
+To get started, simply download the `setup.sh` file, navigate to its location on your CLI, and run:
 ```bash
-cd <path_to_the_downloaded_file>
 bash setup.sh
 ```
 ## Running Inference
-**After running setup.sh, insert the full path to the image file, when prompted:**
+**After running `setup.sh`, insert the full path to the image file, when prompted:**
 ```bash
-</path_to/flower.jpg>
+/path_to/flower.jpg
 ```
 ## License
 This project is open-source under the MIT License.
