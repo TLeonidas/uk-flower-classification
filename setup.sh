@@ -36,5 +36,3 @@ fi
 
 # Step 6: Run Inference on User's Image
 python predict.py "$image_path" --gpu
-
-echo "✅ Complete! Inference has been run on your image.
