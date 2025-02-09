@@ -1,6 +1,3 @@
-import argparse
-import torch
-import json
 from model import load_checkpoint
 from utils import process_image
 
