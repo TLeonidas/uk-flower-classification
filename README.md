@@ -1,6 +1,6 @@
 # UK Flower Classification with Deep Learning 🌺
 
-This repository hosts a trained deep learning model for classifying 102 species of UK endemic flowers, using a custom-built classifier on top of a Resnet50-based neural network. The model achieves 96% validation accuracy.
+This repository hosts a trained deep learning model for classifying 102 species of UK endemic flowers, using a custom-built classifier on top of a Resnet50-based neural network. The model achieves 97.3% validation accuracy.
 
 This project was originally developed as the final project for the AI Programming with Python Nanodegree by Udacity. The trained model is hosted for inference, allowing users to classify flower species using an image.
 
