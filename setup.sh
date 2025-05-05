@@ -2,11 +2,12 @@
 
 # Step 0: Create and activate virtual environment
 echo "Creating virtual environment..."
-python3 -m venv flowerclass
+python -m venv flowerclass
 
 # Check if venv was created
 if [ ! -d "flowerclass" ]; then
     echo "Failed to create virtual environment. Exiting..."
+    read -n 1 -s -r -p "Press any key to exit..."
     exit 1
 fi
 
