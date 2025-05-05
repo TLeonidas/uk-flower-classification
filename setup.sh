@@ -25,14 +25,12 @@ echo "Installing dependencies..."
 pip install --upgrade pip
 pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
 pip install -r requirements.txt
-read -n 1 -s -r -p "Dependencies installed. Press any key to continue..."
 
 # Step 2: Clone the Repository
 echo
 echo "Cloning repository..."
 git clone https://github.com/TLeonidas/uk-flower-classification.git
 cd uk-flower-classification
-read -n 1 -s -r -p "Repository cloned. Press any key to continue..."
 
 # Step 3: Check for the Trained Checkpoint
 if [ ! -f "checkpoint.pth" ]; then
@@ -46,29 +44,26 @@ if [ ! -f "checkpoint.pth" ]; then
     exit 1
 fi
 
-# Step 4: Ask User for Image Path
-echo
-echo "Please enter the full path to the image for inference:"
-read image_path
-
-# Convert Windows paths (backslashes) to Unix-style paths
-image_path=$(echo $image_path | sed 's/\\/\//g')
-
-# Debugging: Print the normalized path
-echo "Checking for image at: $image_path"
-read -n 1 -s -r -p "Press any key to continue..."
-
-# Step 5: Check if Image Exists
-if [ ! -f "$image_path" ]; then
+# Step 4 & 5: Ask User for Image Path and Check If Exists
+while true; do
     echo
-    echo "Error: The file '$image_path' does not exist."
-    echo "Make sure you provide the absolute path to the image."
-    read -n 1 -s -r -p "Press any key to exit..."
-    deactivate
-    cd ..
-    rm -rf flowerclass
-    exit 1
-fi
+    echo "Please enter the full path to the image for inference:"
+    read image_path
+
+    # Convert Windows-style backslashes to Unix-style forward slashes
+    image_path=$(echo "$image_path" | sed 's/\\/\//g')
+
+    echo "Checking for image at: $image_path"
+
+    if [ -f "$image_path" ]; then
+        break  # exit loop if the file exists
+    else
+        echo
+        echo "Error: The file '$image_path' does not exist."
+        echo "Make sure you provide the absolute path to the image."
+        read -n 1 -s -r -p "Press any key to try again..."
+    fi
+done
 
 # Step 6: Run Inference on User's Image
 echo
