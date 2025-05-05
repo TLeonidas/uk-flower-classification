@@ -17,7 +17,7 @@ if [[ "$OSTYPE" == "msys" || "$OSTYPE" == "win32" ]]; then
 else
     source flowerclass/bin/activate
 fi
-read -n 1 -s -r -p "Virtual environment activated. Press any key to continue..."
+echo "Virtual environment created and activated."
 
 # Step 1: Install Dependencies
 echo
