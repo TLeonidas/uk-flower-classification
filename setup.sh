@@ -2,22 +2,40 @@
 
 # Step 0: Create and activate virtual environment
 echo "Creating virtual environment..."
-python -m venv flowerclass
-source flowerclass/bin/activate
+python3 -m venv flowerclass
+
+# Check if venv was created
+if [ ! -d "flowerclass" ]; then
+    echo "Failed to create virtual environment. Exiting..."
+    exit 1
+fi
+
+# Activate depending on OS
+if [[ "$OSTYPE" == "msys" || "$OSTYPE" == "win32" ]]; then
+    source flowerclass/Scripts/activate
+else
+    source flowerclass/bin/activate
+fi
+read -n 1 -s -r -p "Virtual environment activated. Press any key to continue..."
 
 # Step 1: Install Dependencies
+echo
 echo "Installing dependencies..."
 pip install --upgrade pip
 pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
 pip install -r requirements.txt
+read -n 1 -s -r -p "Dependencies installed. Press any key to continue..."
 
 # Step 2: Clone the Repository
+echo
 echo "Cloning repository..."
 git clone https://github.com/TLeonidas/uk-flower-classification.git
 cd uk-flower-classification
+read -n 1 -s -r -p "Repository cloned. Press any key to continue..."
 
 # Step 3: Check for the Trained Checkpoint
 if [ ! -f "checkpoint.pth" ]; then
+    echo
     echo "Error: checkpoint.pth not found in the repository."
     echo "Please make sure the model checkpoint is present and spelled correctly."
     read -n 1 -s -r -p "Press any key to exit..."
@@ -55,7 +73,7 @@ fi
 echo
 echo "Running inference..."
 python predict.py "$image_path" --gpu
-read -n 1 -s -r -p "Inference complete. Press any key to clean up and exit"
+read -n 1 -s -r -p "Inference complete. Press any key to clean up and exit..."
 
 # Step 7: Deactivate and remove virtual environment
 echo
